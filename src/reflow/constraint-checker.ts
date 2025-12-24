@@ -52,6 +52,13 @@ export class ConstraintChecker {
     ): WorkOrderDoc[] {
       const wcMap = new Map(workCenters.map(w => [w.docId, w]));
 
+      // Sort work orders by start date ascending to be more deterministic
+      workOrders.sort((a, b) => {
+        const dateA = new Date(a.data.startDate).getTime();
+        const dateB = new Date(b.data.startDate).getTime();
+        return dateA - dateB;
+      });
+
       // 1️⃣ Convert maintenance WOs into maintenance windows
       for (const wo of workOrders) {
         if (!wo.data.isMaintenance) {

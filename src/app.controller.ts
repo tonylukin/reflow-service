@@ -143,7 +143,7 @@ export class AppController {
   @Get('/reflow')
   getReflowTest() {
     try {
-      const reflowResult = this.reflowService.reflow([wo2_assembly, wo1_assembly, wo3_assembly, wo_maintenance_assembly], [workCenterAssembly, workCenterHQ]);
+      const reflowResult = this.reflowService.reflow([wo1_assembly, wo2_assembly, wo3_assembly, wo_maintenance_assembly], [workCenterAssembly, workCenterHQ]);
       return reflowResult;
     } catch (error) {
       return {
