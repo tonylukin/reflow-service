@@ -17,7 +17,7 @@ There are 2 ways to test the application:
 - [Algorithm Design](./prompts/algorithm-design.md)
 - [DAG Implementation](./src/reflow/dag.service.ts) and [Test](./src/reflow/dag.service.spec.ts) for future integration (@upgrade)
 
-High‑level overview of `src/reflow/reflow.service.ts`:
+### High‑level overview of `src/reflow/reflow.service.ts`:
 
 - NestJS `Injectable` service that computes a constrained schedule for work orders.
 - Uses Luxon `DateTime` and helper date utils (`D`) for shifts, maintenance, and time math.

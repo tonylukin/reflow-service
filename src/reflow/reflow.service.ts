@@ -15,6 +15,13 @@ export class ReflowService {
 
   public static readonly DATE_FORMAT: string = 'yyyy-LL-dd HH:mm:ss';
 
+  /**
+   * Reflow work orders to generate a new schedule.
+   * Respects dependencies, work center shifts, and maintenance windows.
+   * @param workOrders
+   * @param workCenters
+   * @param manufacturingOrders
+   */
   reflow(
     workOrders: WorkOrderDoc[],
     workCenters: WorkCenterDoc[],
